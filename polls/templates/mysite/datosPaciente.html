@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form class="form-signin" action="{% url 'datos_paciente' %}" method="post" id="login-form">{% csrf_token %}
+            <h2 class="form-signin-heading">{{ message }}</h2>
+            <label for="id-dni" class="sr-only">DNI</label>
+            <input type= "text" name="dni" id="id-dni" class="form-control" placeholder="Introduzca el DNI" required autofocus>
+            <label for="id_edad" class="sr-only">EDAD</label>
+            <input type="text" name="edad" id="id_edad" class="form-control" placeholder="Introduzca su edad" required>
+            <label for="id_peso" class="sr-only">PESO</label>
+            <input type="text" name="peso" id="id_peso" class="form-control" placeholder="Introduzca su peso" required>
+            <label for="id_altura" class="sr-only">ALTURA</label>
+            <input type="text" name="altura" id="id_altura" class="form-control" placeholder="Introduzca su altura" required>
+            <!-- <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remenber me
+                </label>
+            </div> -->
+            <button type="submit"> Continuar </button>
+        </form>
+    </div>
+</body>
+</html>

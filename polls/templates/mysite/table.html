@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TABLES</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Grado</th>
+        </tr>
+        {% for patologia in patologias%}
+        <tr>
+            <td>{{patologia.nombre}}</td>
+            <td>{{patologia.grado}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

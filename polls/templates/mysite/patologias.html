@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 50%;
+        }
+        
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 4px;
+        }
+        
+        tr:nth-child(even) {
+        background-color: #007C00;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    <h1 align="center">PACIENTE</h1>
+    <form class="form-signin" action="{% url 'patologias' %}" method="post" id="id_pat">{% csrf_token %}
+    <table align="center">
+        
+        <tr>
+            <th>DNI</th>
+            <th>EDAD</th>
+            <th>PESO</th>
+            <th>ALTURA</th>
+        </tr>
+        <tr>
+            <td>{{paciente.dni}}</td>
+            <td>{{paciente.edad}}</td>
+            <td>{{paciente.peso}}</td>
+            <td>{{paciente.altura}}</td>
+        </tr>
+    </table>
+    <br>
+
+    <h1 align="center">PATOLOGIAS</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-6">
+                        <table class='table'>
+                            <tr>
+                                <th scope='col'>NOMBRE</th>
+                            </tr>
+                        {% for patologia in patologias1 %}
+                            <tr>
+                                <td><input type="checkbox" value="{{ patologia.id }}" name= "{{ patologia.nombre }}" >{{patologia.nombre}}</td>
+                        {% endfor %}
+                        </tr>
+                        </table>
+                    </div>                
+                    <div class="col-6">
+                        <table class='table'>
+                            <tr>
+                                <th scope='col'>NOMBRE</th>
+                            </tr>
+                        {% for patologia in patologias2 %}
+                            <tr>
+                                <td><input type="checkbox" value="{{ patologia.id }}" name= "{{ patologia.nombre }}" >{{patologia.nombre}}</td>
+                        {% endfor %}
+                        </tr>
+                        </table>                      
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+            
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <button type="submit" name ="dni" value="{{ paciente.dni }}"> Continuar </button>
+
+</table>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

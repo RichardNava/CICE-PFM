@@ -1,0 +1,136 @@
+<body>
+
+<form action="{%  url 'registroop' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+<h1><a target="_blank"><p style="color:white;">MANEJO DE OPERADORES FCAT</p></a></h1>
+
+<section id="uno">
+
+    <div class="content">
+        <div class="admin-panel"><label for="toggle" class="admin-text">INGRESO</label></div>
+        <input type="checkbox" id="toggle">
+        <label class="cog octicon octicon-gear" for="toggle"></label>
+        <div class="menu">
+
+            <div class="arrow" align="center"></div>
+
+            <table class="table table-hover" align="center" border="1">        
+            <thead>
+                <tr>
+                    <th><h2><p style="color:white;"><b>Nombre del Operador</b></p></h2></th>
+
+                    <th><h2><p style="color:white;"><b>Apellido del Operador</b></p></h2></th>
+
+                    <th><h2><p style="color:white;"><b>Tipo De Documento</b></p></h2></th>
+
+                    <th><h2><p style="color:white;"><b>Numero De Documento</b></p></h2></th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <td><p align="center">{{ form.nombreoperador }}</p></td>
+
+                    <td><p align="center">{{ form.apellidooperador }}</p></td>
+
+                    <td><p align="center">{{ form.tipodocumento }}</p></td>
+
+                    <td><p align="center">{{ form.numerodocumento }}</p></td>
+                </tr>    
+
+            </tbody>  
+
+            <thead>
+                <tr>
+                    <th><h2><p style="color:white;"><b>Nombre del Equipo</b></p></h2></th>
+
+                    <th><h2><p style="color:white;"><b>Fecha De Ingreso al Equipo</b></p></h2></th>
+
+                    <th><h2><p style="color:white;"><b>Rol Equipo</b></p></h2></th>
+
+                    <th><h2><p style="color:white;"><b>Telefono</b></p></h2></th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+
+                    <td><p align="center">{{con.equipo.nombreequipo}}</p></td>
+                    En esta parte es que se requiere que muestre la lista de los equipos ya creados 
+                    <td><p align="center">{{form.fecha}}</p></td>                                           
+
+                    <td><p align="center">{{ form.rolequipo }}</p></td>
+
+                    <td><p align="center">{{ form.telefono }}</p></td>
+                </tr> 
+            </tbody>
+            <thead>
+                <tr>
+                    <th><h2><p style="color:white;"><b>Fecha de Registro</b></p></h2></th>
+
+                    <th><h2><p style="color:white;"><b>EPS</b></p></h2></th>
+
+                    <th><h2><p style="color:white;"><b>Estado de Salud</b></p></h2></th>
+
+                    <th><h2><p style="color:white;"><b>Alergias</b></p></h2></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><p align="center" >{{form.fecharegistro}}</p></td>
+
+                    <td><p align="center" >{{form.eps}}</p></td>
+
+                    <td><p align="center">{{ form.estadosalud }}</p></td>
+
+                    <td><p align="center">{{ form.alergias }}</p></td>
+
+                </tr>   
+            </tbody>
+            <thead>
+                <tr>
+                    <th><h2><p style="color:white;"><b>Nombre de Acudiente</b></p></h2></th>
+
+                    <th><h2><p style="color:white;"><b>Nº Identificacion</b></p></h2></th>
+
+                    <th><h2><p style="color:white;"><b>Telefono</b></p></h2></th>
+
+                    <th><h2><p style="color:white;"><b>Direccion</b></p></h2></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><p align="center" >{{form.nombreacudiente}}</p></td>
+
+                    <td><p align="center" >{{form.idacudiente}}</p></td>
+
+                    <td><p align="center">{{ form.telefonoacudiente}}</p></td>
+
+                    <td><p align="center">{{ form.direccionacudiente}}</p></td>
+
+                </tr>   
+            </tbody>
+            <thead>
+                <tr>
+                    <th><h2><p style="color:white;"><b>Fotografia</b></p></h2></th>    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><p align="center">{{form.fotografia}}</p></td>
+                </tr>   
+            </tbody>
+
+        </table>        
+
+        </div>
+
+        </br>
+        </br>
+        </div>
+        <div class="content1">
+            <input type="submit" value="Ingresar Operador"  onclick="clicked(event)" >
+        </div>     
+</section>  
+</form>
